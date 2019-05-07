@@ -1,0 +1,623 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/25/2018 2:23:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-QJEG8I5"
+  DTS:CreatorName="DESKTOP-QJEG8I5\derrick_mitchell"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{4120DBF8-5321-47DB-A17C-1580CEA0BE18}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.5000.0"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Versatran_Contacts"
+  DTS:VersionGUID="{B39DE993-1E7D-4973-B150-AB66825CE340}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{ECC7A68A-674F-4783-9C2D-448FF688EECF}"
+      DTS:ObjectName="DestinationConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\derrick_mitchell\Downloads\versatran_contact.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StudentNumber"
+              DTS:DTSID="{F503718D-ECD5-4350-ACE5-6CFA75712215}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HomePhoneNumber"
+              DTS:DTSID="{A717353C-EB76-425A-B970-83DD406E3A31}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="61"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ContactName"
+              DTS:DTSID="{BBA4EC24-791A-4626-99A5-BFC364696546}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ContactLastName"
+              DTS:DTSID="{33EE8AD7-8A41-41DF-A487-803F649996A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contact_Relationship"
+              DTS:DTSID="{05D9025B-0F0C-4023-B170-20135270BD95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contact_CellPhoneNumber"
+              DTS:DTSID="{9E48959A-7084-4ABC-B07A-B0603A654DE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="101"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contact_WorkPhoneNumber"
+              DTS:DTSID="{17AEA6FA-3A11-47C1-9766-B886B27F4841}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contact_WorkPhoneNumberExtension"
+              DTS:DTSID="{16FB038C-A6C6-4286-840E-8BD16DCFAE32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PersonContact_Primary"
+              DTS:DTSID="{A5DF6A62-B8C2-4805-BC70-0025AFA711CB}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8BA367F5-B305-4A4C-9BED-E4FDA3F6860A}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=kcsd-st-db.kcsd.kendallschools.org;User ID=kendall_ro;Initial Catalog=Schooltool;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA9AG5nrp8f0KhzbpfOgSAyAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABGSqXQvNZvN+kr6oTEr4+E//zfwkQ+mjmVmjMkQ59/JgAAAAAOgAAAAAIAACAAAAB+7tYuT8zuca7hQ+Biffc6P3+8cZ4XEmFy+IEJxPH4dTAAAACzhMZbbD5ZsGypIWsaTm3Crolk4q9TWCtOrqDdoTKQ3+9Er7KaSxsX0mqXeZ3Z/htAAAAApkUWoK+/6lrz95UjXKev0N+NzdJicFQ5vz271XOUwXjW+mAj/nLKWgjwlCHKn4jXP/xKQqx0PRnZQXrpVHnrXg</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{681BA79A-24EF-4146-8BD7-9B10DAEB13BC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - versatran_contact_csv"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Destination - versatran_contact_csv">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[StudentNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="StudentNumber"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[StudentNumber]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[StudentNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[HomePhoneNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HomePhoneNumber"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[HomePhoneNumber]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[HomePhoneNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[ContactName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="61"
+                      cachedName="ContactName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[ContactName]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[ContactName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[ContactLastName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="ContactLastName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[ContactLastName]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[ContactLastName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[Contact_Relationship]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Contact_Relationship"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_Relationship]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_Relationship]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[Contact_CellPhoneNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Contact_CellPhoneNumber"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_CellPhoneNumber]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_CellPhoneNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[Contact_WorkPhoneNumber]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="Contact_WorkPhoneNumber"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_WorkPhoneNumber]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_WorkPhoneNumber]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[Contact_WorkPhoneNumberExtension]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Contact_WorkPhoneNumberExtension"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_WorkPhoneNumberExtension]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_WorkPhoneNumberExtension]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].Columns[PersonContact_Primary]"
+                      cachedDataType="bool"
+                      cachedName="PersonContact_Primary"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[PersonContact_Primary]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[PersonContact_Primary]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[StudentNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="StudentNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[HomePhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomePhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[ContactName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="61"
+                      name="ContactName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[ContactLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ContactLastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Contact_Relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_CellPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Contact_CellPhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_WorkPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      name="Contact_WorkPhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[Contact_WorkPhoneNumberExtension]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Contact_WorkPhoneNumberExtension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input].ExternalColumns[PersonContact_Primary]"
+                      dataType="bool"
+                      name="PersonContact_Primary" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source - m1b_Versatran_Contact_Export"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[m1b_Versatran_Contact_Export]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[StudentNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[StudentNumber]"
+                      length="20"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[StudentNumber]"
+                      name="StudentNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[HomePhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[HomePhoneNumber]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[HomePhoneNumber]"
+                      name="HomePhoneNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[ContactName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[ContactName]"
+                      length="61"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[ContactName]"
+                      name="ContactName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[ContactLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[ContactLastName]"
+                      length="30"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[ContactLastName]"
+                      name="ContactLastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_Relationship]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_Relationship]"
+                      name="Contact_Relationship"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_CellPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_CellPhoneNumber]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_CellPhoneNumber]"
+                      name="Contact_CellPhoneNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_WorkPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_WorkPhoneNumber]"
+                      length="101"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_WorkPhoneNumber]"
+                      name="Contact_WorkPhoneNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_WorkPhoneNumberExtension]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_WorkPhoneNumberExtension]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[Contact_WorkPhoneNumberExtension]"
+                      name="Contact_WorkPhoneNumberExtension"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[PersonContact_Primary]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[PersonContact_Primary]"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].Columns[PersonContact_Primary]"
+                      name="PersonContact_Primary"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[StudentNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="StudentNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[HomePhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HomePhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[ContactName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="61"
+                      name="ContactName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[ContactLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="ContactLastName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Contact_Relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_CellPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Contact_CellPhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_WorkPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      name="Contact_WorkPhoneNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[Contact_WorkPhoneNumberExtension]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Contact_WorkPhoneNumberExtension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output].ExternalColumns[PersonContact_Primary]"
+                      dataType="bool"
+                      name="PersonContact_Primary" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[StudentNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[StudentNumber]"
+                      name="StudentNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[HomePhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[HomePhoneNumber]"
+                      name="HomePhoneNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ContactName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="61"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ContactName]"
+                      name="ContactName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ContactLastName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ContactLastName]"
+                      name="ContactLastName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_Relationship]"
+                      name="Contact_Relationship" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_CellPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_CellPhoneNumber]"
+                      name="Contact_CellPhoneNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_WorkPhoneNumber]"
+                      codePage="1252"
+                      dataType="str"
+                      length="101"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_WorkPhoneNumber]"
+                      name="Contact_WorkPhoneNumber" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_WorkPhoneNumberExtension]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[Contact_WorkPhoneNumberExtension]"
+                      name="Contact_WorkPhoneNumberExtension" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[PersonContact_Primary]"
+                      dataType="bool"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[PersonContact_Primary]"
+                      name="PersonContact_Primary" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Destination - versatran_contact_csv.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\Source - m1b_Versatran_Contact_Export.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>
